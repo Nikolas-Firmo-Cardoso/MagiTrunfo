@@ -2,71 +2,103 @@ import React from 'react';
 
 class Form extends React.Component {
   render() {
+    const { cardName, cardDescription,
+      cardAttr1, cardAttr2, cardAttr3,
+      cardImage, cardRare, cardTrunfo,
+      hasTrunfo, isSaveButtonDisabled,
+      onInputChange,
+      onSaveButtonClick } = this.props;
     return (
       <form>
-        <label htmlFor="name>">
+        <label htmlFor="name-input>">
           Nome
           <input
             data-testid="name-input"
             type="text"
+            value={ cardName }
+            onChange={ onInputChange }
           />
         </label>
 
-        <label htmlFor="description">
+        <label htmlFor="description-input">
           Descrição
           <input
             data-testid="description-input"
             type="textarea"
+            value={ cardDescription }
+            onChange={ onInputChange }
           />
         </label>
 
-        <label htmlFor="Atack">
+        <label htmlFor="attr1-input">
           Ataque
           <input
             data-testid="attr1-input"
             type="number"
+            value={ cardAttr1 }
+            onChange={ onInputChange }
           />
         </label>
 
-        <label htmlFor="Defense">
+        <label htmlFor="attr2-input">
           Defesa
           <input
             data-testid="attr2-input"
             type="number"
+            value={ cardAttr2 }
+            onChange={ onInputChange }
           />
         </label>
 
-        <label htmlFor="Special Hability">
+        <label htmlFor="attr3-input">
           Habilidade Especial
           <input
             data-testid="attr3-input"
             type="number"
+            value={ cardAttr3 }
+            onChange={ onInputChange }
           />
         </label>
 
-        <label htmlFor="Image">
+        <label htmlFor="image-input">
           <input
             data-testid="image-input"
             type="text"
+            value={ cardImage }
+            onChange={ onInputChange }
           />
         </label>
 
-        <label htmlFor="Rarity">
-          <select data-testid="rare-input">
+        <label htmlFor="rare-input">
+          <select
+            data-testid="rare-input"
+            value={ cardRare }
+            onChange={ onInputChange }
+          >
             <option value="normal">Normal</option>
             <option value="raro">Raro</option>
             <option value="muito raro">Muito Raro</option>
           </select>
         </label>
 
-        <label htmlFor="Super Trunfo">
+        <label htmlFor="trunfo-input">
+          É o Super-Trunfo?
           <input
             data-testid="trunfo-input"
             type="checkbox"
+            checked={ cardTrunfo }
+            onChange={ onInputChange }
           />
         </label>
 
-        <button data-testid="save-button" type="submit">Salvar</button>
+        <button
+          data-testid="save-button"
+          type="submit"
+          disabled={ isSaveButtonDisabled }
+          onClick={ onSaveButtonClick }
+        >
+          Salvar
+        </button>
 
       </form>
     );
