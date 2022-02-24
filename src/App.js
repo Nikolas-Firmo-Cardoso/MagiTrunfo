@@ -13,19 +13,47 @@ class App extends React.Component {
       cardAttr2: 0,
       cardAttr3: 0,
       cardImage: '',
-      cardRare: 'normal',
+      cardRare: '',
       cardTrunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
     };
   }
 
+  isSaveButtonDisabled = () => {
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+    } = this.state;
+
+    const maxAttr = 90;
+    const maxTotalAttr = 210;
+    const attr1Number = parseInt(cardAttr1, 10);
+    const attr2Number = parseInt(cardAttr2, 10);
+    const attr3Number = parseInt(cardAttr3, 10);
+
+    if ((cardName && cardDescription && cardImage && cardRare !== '')
+        && ((attr1Number + attr2Number + attr3Number) <= maxTotalAttr)
+        && (attr1Number >= 0 && attr1Number <= maxAttr)
+        && (attr2Number >= 0 && attr2Number <= maxAttr)
+        && (attr3Number >= 0 && attr3Number <= maxAttr)) {
+      this.setState({ isSaveButtonDisabled: false });
+    } else {
+      this.setState({ isSaveButtonDisabled: true });
+    }
+  }
+
   // Req.4 ajuda de Imar Mendes
   onInputChange = (event) => {
     const { name, value, type } = event.target;
     this.setState({
-      [name]: type === 'checkbox' ? event.target.checked : value,
-    });
+      [name]: type === 'checkbox' ? event.target.checked : value },
+    () => this.isSaveButtonDisabled());
   }
 
   onSaveButtonClick = () => {
