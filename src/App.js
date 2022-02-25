@@ -17,9 +17,11 @@ class App extends React.Component {
       cardTrunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
+      savedCards: [],
     };
   }
 
+  // Req.5
   isSaveButtonDisabled = () => {
     const {
       cardName,
@@ -56,7 +58,49 @@ class App extends React.Component {
     () => this.isSaveButtonDisabled());
   }
 
-  onSaveButtonClick = () => {
+  // Req.6
+  onSaveButtonClick = (event) => {
+    event.preventDefault();
+    // primeiro desestruturamos o estado para ele ser utilizado
+    // esses caras estão recebendo informações do estado
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+    } = this.state;
+
+    // definifimos um novo objeto que recebe as chaves do estado com os valores que são dados nos inputs conforme são alterados.
+    // esses caras estão sendo atribuidos ao newCard
+    const newCard = {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+    };
+
+    // por fim salvamos o card no savedCards através do [...prevState.savedCards, newCard], isso significa que fizemos um spread de savedCards para indicar que estamos usando apenas os elementos dele e não salvando novos arrays dentro do array, e ele é acessado pelo prevState, que é um input do setState, poderia ser qualquer palavra, mas pela documentação sabemos que o primeiro termo dado sermpre se refere ao estado anterior. Entao por fim, salvamos em savedCards o proprio estado anterior de savedCards e o novo newCard.
+    this.setState((prevState) => ({
+      savedCards: [...prevState.savedCards, newCard],
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: 0,
+      cardAttr2: 0,
+      cardAttr3: 0,
+      cardImage: '',
+      cardRare: '',
+      cardTrunfo: false,
+      hasTrunfo: false,
+      isSaveButtonDisabled: true,
+    }));
   }
 
   render() {
