@@ -88,6 +88,8 @@ class App extends React.Component {
     };
 
     // por fim salvamos o card no savedCards através do [...prevState.savedCards, newCard], isso significa que fizemos um spread de savedCards para indicar que estamos usando apenas os elementos dele e não salvando novos arrays dentro do array, e ele é acessado pelo prevState, que é um input do setState, poderia ser qualquer palavra, mas pela documentação sabemos que o primeiro termo dado sermpre se refere ao estado anterior. Entao por fim, salvamos em savedCards o proprio estado anterior de savedCards e o novo newCard.
+
+    // setState com arrow function indica que usaremos algo do estado anterior, sem arrow function significa que não necessitamos das informações anteriores
     this.setState((prevState) => ({
       savedCards: [...prevState.savedCards, newCard],
       cardName: '',
@@ -98,10 +100,24 @@ class App extends React.Component {
       cardImage: '',
       cardRare: '',
       cardTrunfo: false,
-      hasTrunfo: false,
       isSaveButtonDisabled: true,
-    }));
+    }), () => {
+      const { savedCards } = this.state;
+      const validateTrunfo = savedCards.some((element) => element.cardTrunfo === true);
+      this.setState({ hasTrunfo: validateTrunfo });
+    });
   }
+
+  // // Req.7
+  // hasTrunfo = () => {
+  //   const { savedCards } = this.state;
+  //   const validateTrunfo = savedCards.some((element) => element.cardTrunfo === true);
+  //   if (validateTrunfo === true) {
+  //     this.setState({ hasTrunfo: true });
+  //   } else {
+  //     this.setState({ hasTrunfo: false });
+  //   }
+  // };
 
   render() {
     const {
