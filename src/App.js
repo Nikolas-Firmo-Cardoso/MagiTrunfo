@@ -7,6 +7,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      // os nomes das chaves do state devem ser sempre equivalentes aos names do que desejamos controlar, como por exemplo, os inputs do Form
       cardName: '',
       cardDescription: '',
       cardAttr1: 0,
@@ -54,6 +55,9 @@ class App extends React.Component {
   onInputChange = (event) => {
     const { name, value, type } = event.target;
     this.setState({
+      // [name] = isso é uma interpolação, significa que o nome não é name, mas sim o valor de name
+
+      // digita algo no input do cardName -> a função inputChange() é chamada -> essa função atualiza o estado do cardName -> quando esse estado é atualizado, o input é renderizado novamente com o novo valor
       [name]: type === 'checkbox' ? event.target.checked : value },
     () => this.isSaveButtonDisabled());
   }
@@ -101,6 +105,8 @@ class App extends React.Component {
       cardRare: '',
       cardTrunfo: false,
       isSaveButtonDisabled: true,
+      // Req.7 fica dentro do Req.6
+      // setState é uma função assincrona, por isso mantemos o req.7 dentro do 6
     }), () => {
       const { savedCards } = this.state;
       const validateTrunfo = savedCards.some((element) => element.cardTrunfo === true);
@@ -119,6 +125,25 @@ class App extends React.Component {
   //   }
   // };
 
+  // Req.8
+  exibCards() {
+    const { savedCards } = this.state;
+    const viewCards = savedCards.map((element) => (
+      <Card
+        cardName={ element.cardName }
+        cardDescription={ element.cardDescription }
+        cardAttr1={ element.cardAttr1 }
+        cardAttr2={ element.cardAttr2 }
+        cardAttr3={ element.cardAttr3 }
+        cardImage={ element.cardImage }
+        cardRare={ element.cardRare }
+        cardTrunfo={ element.cardTrunfo }
+        key={ element.cardName }
+      />
+    ));
+    return viewCards;
+  }
+
   render() {
     const {
       cardName,
@@ -136,6 +161,7 @@ class App extends React.Component {
       <div>
         <h1>Tryunfo</h1>
         <Form
+        // esse { cardName } é o do this.state da linha 136, agora o cardName é uma prop que esta sendo passada para o Form.
           cardName={ cardName }
           cardDescription={ cardDescription }
           cardAttr1={ cardAttr1 }
@@ -160,6 +186,7 @@ class App extends React.Component {
           hasTrunfo={ hasTrunfo }
           cardTrunfo={ cardTrunfo }
         />
+        { this.exibCards() }
       </div>
     );
   }

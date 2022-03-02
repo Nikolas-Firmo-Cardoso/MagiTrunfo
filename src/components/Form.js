@@ -9,6 +9,7 @@ class Form extends React.Component {
       hasTrunfo, isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick } = this.props;
+      // this.props é uma forma de passarmos o valor do state do pai para um filho
     return (
       <form>
         <label htmlFor="cardName">
