@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 class Card extends React.Component {
   render() {
@@ -7,17 +7,21 @@ class Card extends React.Component {
       cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo } = this.props;
     return (
-      <section>
-        <p data-testid="name-card">{ cardName }</p>
-        <img src={ cardImage } alt={ cardName } data-testid="image-card" />
-        <p data-testid="description-card">{ cardDescription }</p>
-        <p data-testid="attr1-card">{ cardAttr1 }</p>
-        <p data-testid="attr2-card">{ cardAttr2 }</p>
-        <p data-testid="attr3-card">{ cardAttr3 }</p>
-        <p data-testid="rare-card">{ cardRare }</p>
-        { cardTrunfo === true
-          ? <p data-testid="trunfo-card">Super Trunfo</p>
-          : null }
+      <section className="card">
+        <div className="cardAttributes">
+          <p data-testid="name-card">{ cardName }</p>
+        </div>
+        <img className="imagem" src={ cardImage } alt={ cardName } data-testid="image-card" />
+        <div className="cardAttributes">
+          <p data-testid="description-card">{ cardDescription }</p>
+          <p data-testid="attr1-card">Ataque: { cardAttr1 }</p>
+          <p data-testid="attr2-card">Defesa: { cardAttr2 }</p>
+          <p data-testid="attr3-card">Habilidade Especial: { cardAttr3 }</p>
+          <p data-testid="rare-card">{ cardRare }</p>
+        </div>
+          { cardTrunfo === true
+            ? <p className="trunfo" data-testid="trunfo-card">Super Trunfo</p>
+            : null }
       </section>
     );
   }

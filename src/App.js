@@ -24,6 +24,8 @@ class App extends React.Component {
 
   // Req.5
   isSaveButtonDisabled = () => {
+    // primeiro desestruturamos o estado para ele ser utilizado
+    // esses caras estão recebendo informações do estado
     const {
       cardName,
       cardDescription,
@@ -57,13 +59,14 @@ class App extends React.Component {
     this.setState({
       // [name] = isso é uma interpolação, significa que o nome não é name, mas sim o valor de name
 
-      // digita algo no input do cardName -> a função inputChange() é chamada -> essa função atualiza o estado do cardName -> quando esse estado é atualizado, o input é renderizado novamente com o novo valor
+      // digita algo no input do cardName -> a função onInputChange() é chamada -> essa função atualiza o estado do cardName -> quando esse estado é atualizado, o input é renderizado novamente com o novo valor
       [name]: type === 'checkbox' ? event.target.checked : value },
     () => this.isSaveButtonDisabled());
   }
 
   // Req.6
   onSaveButtonClick = (event) => {
+    // preventDefault impede que o botão execute sua função padrão
     event.preventDefault();
     // primeiro desestruturamos o estado para ele ser utilizado
     // esses caras estão recebendo informações do estado
@@ -91,7 +94,7 @@ class App extends React.Component {
       cardTrunfo,
     };
 
-    // por fim salvamos o card no savedCards através do [...prevState.savedCards, newCard], isso significa que fizemos um spread de savedCards para indicar que estamos usando apenas os elementos dele e não salvando novos arrays dentro do array, e ele é acessado pelo prevState, que é um input do setState, poderia ser qualquer palavra, mas pela documentação sabemos que o primeiro termo dado sermpre se refere ao estado anterior. Entao por fim, salvamos em savedCards o proprio estado anterior de savedCards e o novo newCard.
+    // por fim salvamos o card no savedCards através do [...prevState.savedCards, newCard], isso significa que fizemos um spread de savedCards para indicar que estamos usando apenas os elementos dele e não salvando novos arrays dentro do array, e ele é acessado pelo prevState, que é um input do setState, poderia ser qualquer palavra, mas pela documentação sabemos que o primeiro termo dado sempre se refere ao estado anterior. Entao por fim, salvamos em savedCards o proprio estado anterior de savedCards e o novo newCard.
 
     // setState com arrow function indica que usaremos algo do estado anterior, sem arrow function significa que não necessitamos das informações anteriores
     this.setState((prevState) => ({
@@ -105,7 +108,7 @@ class App extends React.Component {
       cardRare: '',
       cardTrunfo: false,
       isSaveButtonDisabled: true,
-      // Req.7 fica dentro do Req.6
+      // Req.7 fica dentro do Req.6 - Ajuda de Isabela Nery
       // setState é uma função assincrona, por isso mantemos o req.7 dentro do 6
     }), () => {
       const { savedCards } = this.state;
@@ -159,7 +162,7 @@ class App extends React.Component {
     } = this.state;
     return (
       <div>
-        <h1>Tryunfo</h1>
+        <h1 className="title">MagiTrunfo</h1>
         <Form
         // esse { cardName } é o do this.state da linha 136, agora o cardName é uma prop que esta sendo passada para o Form.
           cardName={ cardName }
@@ -175,6 +178,7 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
         />
+        <h1 className="title">Card Preview</h1>
         <Card
           cardName={ cardName }
           cardDescription={ cardDescription }
@@ -186,6 +190,7 @@ class App extends React.Component {
           hasTrunfo={ hasTrunfo }
           cardTrunfo={ cardTrunfo }
         />
+        <h1 className="title">Lista de Cards</h1>
         { this.exibCards() }
       </div>
     );
