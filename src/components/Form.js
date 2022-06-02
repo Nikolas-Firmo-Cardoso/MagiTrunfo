@@ -16,108 +16,94 @@ class Form extends React.Component {
           <section className="sectionTable">
             <label htmlFor="cardName">
               Nome
-              <section>
-                <input
-                  name="cardName"
-                  data-testid="name-input"
-                  type="text"
-                  value={ cardName }
-                  onChange={ onInputChange }
-                />
-              </section>
+              <input
+                name="cardName"
+                data-testid="name-input"
+                type="text"
+                value={ cardName }
+                onChange={ onInputChange }
+              />
             </label>
           </section>
 
           <section className="sectionTable">
             <label htmlFor="cardDescription">
               Descrição
-              <section>
-                <input
-                  name="cardDescription"
-                  data-testid="description-input"
-                  type="textarea"
-                  value={ cardDescription }
-                  onChange={ onInputChange }
-                />
-              </section>
+              <input
+                name="cardDescription"
+                data-testid="description-input"
+                type="textarea"
+                value={ cardDescription }
+                onChange={ onInputChange }
+              />
             </label>
           </section>
 
           <section className="sectionTable">
             <label htmlFor="cardAttr1">
               Ataque
-              <section>
-                <input
-                  name="cardAttr1"
-                  data-testid="attr1-input"
-                  type="number"
-                  value={ cardAttr1 }
-                  onChange={ onInputChange }
-                />
-              </section>
+              <input
+                name="cardAttr1"
+                data-testid="attr1-input"
+                type="number"
+                value={ cardAttr1 }
+                onChange={ onInputChange }
+              />
             </label>
           </section>
 
           <section className="sectionTable">
             <label htmlFor="cardAttr2">
               Defesa
-              <section>
-                <input
-                  name="cardAttr2"
-                  data-testid="attr2-input"
-                  type="number"
-                  value={ cardAttr2 }
-                  onChange={ onInputChange }
-                />
-              </section>
+              <input
+                name="cardAttr2"
+                data-testid="attr2-input"
+                type="number"
+                value={ cardAttr2 }
+                onChange={ onInputChange }
+              />
             </label>
           </section>
 
           <section className="sectionTable">
             <label htmlFor="cardAttr3">
               Habilidade Especial
-              <section>
-                <input
-                  name="cardAttr3"
-                  data-testid="attr3-input"
-                  type="number"
-                  value={ cardAttr3 }
-                  onChange={ onInputChange }
-                />
-              </section>
+              <input
+                name="cardAttr3"
+                data-testid="attr3-input"
+                type="number"
+                value={ cardAttr3 }
+                onChange={ onInputChange }
+              />
             </label>
           </section>
 
           <section className="sectionTable">
             <label htmlFor="cardImage">
               Imagem
-              <section>
-                <input
-                  name="cardImage"
-                  data-testid="image-input"
-                  type="text"
-                  value={ cardImage }
-                  onChange={ onInputChange }
-                />
-              </section>
+              <input
+                name="cardImage"
+                data-testid="image-input"
+                type="text"
+                value={ cardImage }
+                onChange={ onInputChange }
+              />
             </label>
           </section>
 
-          <section className="sectionTable">
-            <label htmlFor="cardRare">
-              <select
-                name="cardRare"
-                data-testid="rare-input"
-                value={ cardRare }
-                onChange={ onInputChange }
-              >
-                <option value=""> </option>
-                <option value="Normal">Normal</option>
-                <option value="Incomum">Incomum</option>
-                <option value="Raro">Raro</option>
-              </select>
-            </label>
-          </section>
+          <label className="sectionTable" htmlFor="cardRare">
+            <select
+              name="cardRare"
+              data-testid="rare-input"
+              value={ cardRare }
+              onChange={ onInputChange }
+            >
+              <option value=""> </option>
+              <option value="Normal">Normal</option>
+              <option value="Incomum">Incomum</option>
+              <option value="Raro">Raro</option>
+            </select>
+          </label>
 
           {
             (hasTrunfo === true)
@@ -125,7 +111,7 @@ class Form extends React.Component {
               : (
                 <section className="sectionTable">
                   <label htmlFor="cardTrunfo">
-                   Super-Trunfo
+                    Super-Trunfo
                     <input
                       name="cardTrunfo"
                       data-testid="trunfo-input"
