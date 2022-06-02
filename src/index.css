@@ -1,6 +1,6 @@
 
 body {
-  background-image: url("/home/nikolas/Área de Trabalho/PROJETOS/FRONT-END/B.11 - FORMULÁRIOS EM REACT/sd-019-a-project-tryunfo/src/images/nothreDame.jpg");
+  background-image: url("./images/nothreDame.jpg");
   background-size: cover;
   background-repeat: no-repeat ;
   background-attachment: fixed;
@@ -61,7 +61,7 @@ code {
 
 .card {
   background-color: rgb(255, 255, 255);
-  background-image: url("/home/nikolas/Área de Trabalho/PROJETOS/FRONT-END/B.11 - FORMULÁRIOS EM REACT/sd-019-a-project-tryunfo/src/images/texture.jpg");
+  background-image: url("./images/texture.jpg");
   border: 10px solid rgb(255, 255, 255);
   border-radius: 5px;
   width: 300px;
