@@ -17,6 +17,7 @@ class Form extends React.Component {
           Nome
           <label htmlFor="cardName" className="teste-label">
             <input
+              autoComplete="off"
               name="cardName"
               data-testid="name-input"
               type="text"
@@ -31,6 +32,7 @@ class Form extends React.Component {
           Descrição
           <label htmlFor="cardDescription">
             <input
+              autoComplete="off"
               name="cardDescription"
               data-testid="description-input"
               type="textarea"
@@ -84,6 +86,7 @@ class Form extends React.Component {
           Imagem
           <label htmlFor="cardImage">
             <input
+              autoComplete="off"
               name="cardImage"
               data-testid="image-input"
               type="text"

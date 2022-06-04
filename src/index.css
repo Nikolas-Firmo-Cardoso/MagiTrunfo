@@ -139,6 +139,12 @@ button {
   border: 3px solid rgb(200, 200, 200);
   border-radius: 5px;
   font-family: 'Cinzel Decorative', cursive;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(255, 255, 255);
+  zoom: 110%;
 }
 
 .buttonExcluir {
