@@ -153,6 +153,7 @@ class App extends React.Component {
           cardTrunfo={ element.cardTrunfo }
         />
         <button
+          className="buttonExcluir"
           type="button"
           onClick={ this.deleteCard }
           value={ element.cardName }

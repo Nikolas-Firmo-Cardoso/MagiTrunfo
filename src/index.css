@@ -88,7 +88,7 @@ code {
   height: 480px;
   margin: auto;
   padding: 5px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .cardAttributes {
@@ -139,4 +139,10 @@ button {
   border: 3px solid rgb(200, 200, 200);
   border-radius: 5px;
   font-family: 'Cinzel Decorative', cursive;
+}
+
+.buttonExcluir {
+  width: 100px;
+  height: 30px;
+  background-color: rgb(255, 255, 255);
 }
