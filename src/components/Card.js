@@ -7,7 +7,7 @@ class Card extends React.Component {
       cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo } = this.props;
     return (
-      <section className="card">
+      <section className="card card-teste">
         <div className="cardAttributes">
           <p data-testid="name-card">{ cardName }</p>
         </div>

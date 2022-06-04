@@ -11,129 +11,132 @@ class Form extends React.Component {
       onSaveButtonClick } = this.props;
       // this.props é uma forma de passarmos o valor do state do pai para um filho
     return (
-      <form>
-        <div className="divForm">
-          <section className="sectionTable">
-            <label htmlFor="cardName">
-              Nome
-              <input
-                name="cardName"
-                data-testid="name-input"
-                type="text"
-                value={ cardName }
-                onChange={ onInputChange }
-              />
-            </label>
-          </section>
+      <form className="divForm">
 
-          <section className="sectionTable">
-            <label htmlFor="cardDescription">
-              Descrição
-              <input
-                name="cardDescription"
-                data-testid="description-input"
-                type="textarea"
-                value={ cardDescription }
-                onChange={ onInputChange }
-              />
-            </label>
-          </section>
-
-          <section className="sectionTable">
-            <label htmlFor="cardAttr1">
-              Ataque
-              <input
-                name="cardAttr1"
-                data-testid="attr1-input"
-                type="number"
-                value={ cardAttr1 }
-                onChange={ onInputChange }
-              />
-            </label>
-          </section>
-
-          <section className="sectionTable">
-            <label htmlFor="cardAttr2">
-              Defesa
-              <input
-                name="cardAttr2"
-                data-testid="attr2-input"
-                type="number"
-                value={ cardAttr2 }
-                onChange={ onInputChange }
-              />
-            </label>
-          </section>
-
-          <section className="sectionTable">
-            <label htmlFor="cardAttr3">
-              Habilidade Especial
-              <input
-                name="cardAttr3"
-                data-testid="attr3-input"
-                type="number"
-                value={ cardAttr3 }
-                onChange={ onInputChange }
-              />
-            </label>
-          </section>
-
-          <section className="sectionTable">
-            <label htmlFor="cardImage">
-              Imagem
-              <input
-                name="cardImage"
-                data-testid="image-input"
-                type="text"
-                value={ cardImage }
-                onChange={ onInputChange }
-              />
-            </label>
-          </section>
-
-          <label className="sectionTable" htmlFor="cardRare">
-            <select
-              name="cardRare"
-              data-testid="rare-input"
-              value={ cardRare }
+        <section className="sectionTable">
+          Nome
+          <label htmlFor="cardName" className="teste-label">
+            <input
+              name="cardName"
+              data-testid="name-input"
+              type="text"
+              value={ cardName }
               onChange={ onInputChange }
-            >
-              <option value=""> </option>
-              <option value="Normal">Normal</option>
-              <option value="Incomum">Incomum</option>
-              <option value="Raro">Raro</option>
-            </select>
+              placeholder="Digite aqui"
+            />
           </label>
+        </section>
 
-          {
-            (hasTrunfo === true)
-              ? <p>Você já tem um Super Trunfo em seu baralho</p>
-              : (
-                <section className="sectionTable">
-                  <label htmlFor="cardTrunfo">
-                    Super-Trunfo
-                    <input
-                      name="cardTrunfo"
-                      data-testid="trunfo-input"
-                      type="checkbox"
-                      checked={ cardTrunfo }
-                      onChange={ onInputChange }
-                    />
-                  </label>
-                </section>)
-          }
+        <section className="sectionTable">
+          Descrição
+          <label htmlFor="cardDescription">
+            <input
+              name="cardDescription"
+              data-testid="description-input"
+              type="textarea"
+              value={ cardDescription }
+              onChange={ onInputChange }
+              placeholder="Digite aqui"
+            />
+          </label>
+        </section>
 
-          <section>
-            <button
-              data-testid="save-button"
-              type="submit"
-              disabled={ isSaveButtonDisabled }
-              onClick={ onSaveButtonClick }
-            >
-              Salvar
-            </button>
-          </section>
-        </div>
+        <section className="sectionTable">
+          Ataque
+          <label htmlFor="cardAttr1">
+            <input
+              name="cardAttr1"
+              data-testid="attr1-input"
+              type="number"
+              value={ cardAttr1 }
+              onChange={ onInputChange }
+            />
+          </label>
+        </section>
+
+        <section className="sectionTable">
+          Defesa
+          <label htmlFor="cardAttr2">
+            <input
+              name="cardAttr2"
+              data-testid="attr2-input"
+              type="number"
+              value={ cardAttr2 }
+              onChange={ onInputChange }
+            />
+          </label>
+        </section>
+
+        <section className="sectionTable">
+          Habilidade Especial
+          <label htmlFor="cardAttr3">
+            <input
+              name="cardAttr3"
+              data-testid="attr3-input"
+              type="number"
+              value={ cardAttr3 }
+              onChange={ onInputChange }
+            />
+          </label>
+        </section>
+
+        <section className="sectionTable">
+          Imagem
+          <label htmlFor="cardImage">
+            <input
+              name="cardImage"
+              data-testid="image-input"
+              type="text"
+              value={ cardImage }
+              onChange={ onInputChange }
+              placeholder="Insira o link aqui"
+            />
+          </label>
+        </section>
+
+        <label className="sectionTable" htmlFor="cardRare">
+          Raridade
+          <select
+            name="cardRare"
+            data-testid="rare-input"
+            value={ cardRare }
+            onChange={ onInputChange }
+          >
+            <option value=""> </option>
+            <option value="Normal">Normal</option>
+            <option value="Incomum">Incomum</option>
+            <option value="Raro">Raro</option>
+          </select>
+        </label>
+
+        {
+          (hasTrunfo === true)
+            ? <p>Você já tem um Super Trunfo em seu baralho</p>
+            : (
+              <section className="sectionTable">
+                <label htmlFor="cardTrunfo">
+                  Super-Trunfo
+                  <input
+                    name="cardTrunfo"
+                    data-testid="trunfo-input"
+                    type="checkbox"
+                    checked={ cardTrunfo }
+                    onChange={ onInputChange }
+                  />
+                </label>
+              </section>)
+        }
+
+        <section>
+          <button
+            data-testid="save-button"
+            type="submit"
+            disabled={ isSaveButtonDisabled }
+            onClick={ onSaveButtonClick }
+          >
+            Salvar
+          </button>
+        </section>
 
       </form>
     );

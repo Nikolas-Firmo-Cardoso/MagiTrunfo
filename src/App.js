@@ -128,21 +128,38 @@ class App extends React.Component {
   //   }
   // };
 
+  deleteCard = (event) => {
+    const { savedCards } = this.state;
+    const updatedCards = savedCards.filter((element) => element.cardName
+    !== event.target.value);
+    this.setState({ savedCards: updatedCards });
+  };
+
   // Req.8
   exibCards() {
     const { savedCards } = this.state;
     const viewCards = savedCards.map((element) => (
-      <Card
-        cardName={ element.cardName }
-        cardDescription={ element.cardDescription }
-        cardAttr1={ element.cardAttr1 }
-        cardAttr2={ element.cardAttr2 }
-        cardAttr3={ element.cardAttr3 }
-        cardImage={ element.cardImage }
-        cardRare={ element.cardRare }
-        cardTrunfo={ element.cardTrunfo }
+      <div
         key={ element.cardName }
-      />
+      >
+        <Card
+          cardName={ element.cardName }
+          cardDescription={ element.cardDescription }
+          cardAttr1={ element.cardAttr1 }
+          cardAttr2={ element.cardAttr2 }
+          cardAttr3={ element.cardAttr3 }
+          cardImage={ element.cardImage }
+          cardRare={ element.cardRare }
+          cardTrunfo={ element.cardTrunfo }
+        />
+        <button
+          type="button"
+          onClick={ this.deleteCard }
+          value={ element.cardName }
+        >
+          Excluir
+        </button>
+      </div>
     ));
     return viewCards;
   }
@@ -179,19 +196,25 @@ class App extends React.Component {
           onSaveButtonClick={ this.onSaveButtonClick }
         />
         <h1 className="title">Card Preview</h1>
-        <Card
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          hasTrunfo={ hasTrunfo }
-          cardTrunfo={ cardTrunfo }
-        />
+        <div className="card-container">
+          <div className="card-teste">
+            <Card
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              hasTrunfo={ hasTrunfo }
+              cardTrunfo={ cardTrunfo }
+            />
+          </div>
+        </div>
         <h1 className="title">Lista de Cards</h1>
-        { this.exibCards() }
+        <div className="card-container">
+          { this.exibCards() }
+        </div>
       </div>
     );
   }
