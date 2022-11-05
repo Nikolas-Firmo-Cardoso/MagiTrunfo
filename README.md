@@ -2,6 +2,8 @@ Esse projeto se consiste na simulação de um software para criação de um jogo
 Ele permite a entrada de dados para o nome do card, descrição, ataque, defesa, habilidade especial, imagem, raridade e a qualidade de ser o Super Trunfo ou não.
 
 ## 
+## Projeto MagiTrunfo:
+
 
 Foram utilizados JavaScript, conceitos de formulários em JS, React, HTML e CSS.
 
