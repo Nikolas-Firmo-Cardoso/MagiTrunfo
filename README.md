@@ -35,7 +35,7 @@ git clone git@github.com:Nikolas-Firmo-Cardoso/MagiTrunfo.git
 Entre na raiz do projeto:
 
 ```bash
-cd sd-019-a-project-tryunfo
+cd MagiTrunfo
 ```
 
 Instale as dependências:
