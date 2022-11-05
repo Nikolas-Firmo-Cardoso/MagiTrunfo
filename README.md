@@ -26,25 +26,25 @@ Foram utilizados JavaScript, conceitos de formulários em JS, React, HTML e CSS.
 ## Rodando a aplicação:
 
 
-# Para baixar o código:
+Para baixar o código:
 
 ```bash
 git clone git@github.com:Nikolas-Firmo-Cardoso/MagiTrunfo.git
 ```
 
-# Entre na raiz do projeto:
+Entre na raiz do projeto:
 
 ```bash
 cd sd-019-a-project-tryunfo
 ```
 
-# Instale as dependências:
+Instale as dependências:
 
 ```bash
 npm install
 ```
 
-# Inicie a aplicação em seu navegador:
+Inicie a aplicação em seu navegador:
 
 ```bash
 npm start
