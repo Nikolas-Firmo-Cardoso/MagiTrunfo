@@ -20,7 +20,7 @@ Foram utilizados JavaScript, conceitos de formulários em JS, React, HTML e CSS.
 
 ##
 
-Rodando a aplicação:
+## Rodando a aplicação:
 
 Para baixar o código:
 git clone git@github.com:eduardomuchak/19-trybe-recipes.git
