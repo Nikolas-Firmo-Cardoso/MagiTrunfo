@@ -21,15 +21,15 @@ Foram utilizados JavaScript, conceitos de formulários em JS, React, HTML e CSS.
 ##
 
 Rodando a aplicação:
+
 Para baixar o código:
-
 git clone git@github.com:eduardomuchak/19-trybe-recipes.git
+
 Entre na raiz do projeto:
-
 cd 19-trybe-recipes
+
 Instale as dependências:
-
 npm install
-Inicie a aplicação em seu navegador:
 
+Inicie a aplicação em seu navegador:
 npm start
