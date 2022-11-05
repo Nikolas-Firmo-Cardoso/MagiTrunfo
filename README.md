@@ -29,13 +29,13 @@ Foram utilizados JavaScript, conceitos de formulários em JS, React, HTML e CSS.
 # Para baixar o código:
 
 ```bash
-git clone git@github.com:eduardomuchak/19-trybe-recipes.git
+git clone git@github.com:Nikolas-Firmo-Cardoso/MagiTrunfo.git
 ```
 
 # Entre na raiz do projeto:
 
 ```bash
-cd 19-trybe-recipes
+cd sd-019-a-project-tryunfo
 ```
 
 # Instale as dependências:
