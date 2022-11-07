@@ -1,4 +1,22 @@
-## Projeto MagiTrunfo:
+## EN - MagiTrunfo Project:
+
+
+This project consists of simulating a software to create a Super Trump game.
+It allows data entry for card name, description, attack, defense, special ability, image, rarity, and the quality of being Super Trump or not.
+
+##
+
+JavaScript, form concepts in JS, React, HTML and CSS were used.
+
+ ##
+ 
+ You can check the result through this link: https://www.linkedin.com/feed/update/urn:li:activity:6941042252282486784/
+ 
+ ##
+
+------------------------------
+
+## PT - Projeto MagiTrunfo:
 
 
 Esse projeto se consiste na simulação de um software para criação de um jogo de Super-Trunfo.
