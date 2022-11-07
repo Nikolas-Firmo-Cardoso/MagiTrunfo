@@ -12,7 +12,6 @@ JavaScript, form concepts in JS, React, HTML and CSS were used.
  
  You can check the result through this link: https://www.linkedin.com/feed/update/urn:li:activity:6941042252282486784/
  
- ##
 
 ------------------------------
 
